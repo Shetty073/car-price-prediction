@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote My Car - Price Prediction App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <form method="POST" action="{{ url_for('predict') }}">
+            <div class="mb-3">
+                <label for="year" class="form-label">Year</label>
+                <input type="number" class="form-control" id="year" name="year" required>
+            </div>
+            <div class="mb-3">
+                <label for="present_price" class="form-label">Present Price</label>
+                <input type="number" step="0.01" class="form-control" id="present_price" name="present_price" required>
+            </div>
+            <div class="mb-3">
+                <label for="kms_driven" class="form-label">Kilometers Driven</label>
+                <input type="number" class="form-control" id="kms_driven" name="kms_driven" required>
+            </div>
+            <div class="mb-3">
+                <label for="owner" class="form-label">Owner</label>
+                <select class="form-select" id="owner" name="owner" aria-label="Default select example" required>
+                    <option value="0">First</option>
+                    <option value="1">Second</option>
+                    <option value="2">Third</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Get Price</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
